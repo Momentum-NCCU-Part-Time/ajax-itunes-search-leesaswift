@@ -41,6 +41,14 @@ searchForm.addEventListener('submit', (event) => {
                 <h3>${results.artistName}</h3>
                 </div>
             `
+            // // document.querySelectorAll(".previewButton").forEach(button =>{
+            // //     button.addEventListener("click",function(){
+            // //         const previewUrl = this.getAttribute("data-preview-Url")
+            // //         const audioPlayer = document.getElementById("audioPlayer")
+            // //         audioPlayer.src = previewUrl
+            // //         audioPlayer.play()
+            //     })
+            // })
     })
 })
 })
