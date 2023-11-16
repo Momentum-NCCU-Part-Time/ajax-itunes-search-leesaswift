@@ -17,13 +17,17 @@ searchForm.addEventListener('submit', (event) => {
     if (response.status === 200) {
         return response.json();
     } else {
-        let errorMsg = document.createElement ('h2');
-        errorMsg.innerText = "No results found";
-        display.appendChild(errorMsg);
+        throw new Error("No results found")
     }
 }).then((parsedJsonResponse) => {
     console.log(parsedJsonResponse);
     const songClips = parsedJsonResponse.results;
+    display.innerHTML = ""
+    if (songClips.length === 0) {
+        let errorMsg = document.createElement("h2")
+        errorMsg.innerText = "No results found"
+        display.appendChild(errorMsg)
+    }
     return songClips.map(results => {
         preview.innerHTML = `
         <figure>
